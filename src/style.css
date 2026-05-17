@@ -1,0 +1,35 @@
+canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 0;
+}
+
+#app {
+  position: relative;
+  z-index: 1;
+}
+
+.section {
+  height: 117vh;
+  display: flex;
+  align-items: center;
+}
+
+.left {
+  justify-content: flex-start;
+  padding-left: 10%;
+}
+
+.right {
+  justify-content: flex-end;
+  padding-right: 10%;
+}
+
+.box {
+  width: 250px;
+  padding: 15px;
+  background: rgba(80, 80, 80, 0.4);
+  color: white;
+  border-radius: 10px;
+}

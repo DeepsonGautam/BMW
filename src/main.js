@@ -50,7 +50,7 @@ scene.add(pointLight, ambientLight)
 function addStar() {
 
   const geometry = new Three.SphereGeometry(0.25, 24, 24);
-  const material = new Three.MeshStandardMaterial( { color: 0x00000})
+  const material = new Three.MeshStandardMaterial( { color: 0xffffff})
   const star = new Three.Mesh( geometry, material)
 
   const [x, y, z] = Array(3).fill().map(() => Three.MathUtils.randFloatSpread( 130 ));
@@ -61,7 +61,7 @@ function addStar() {
 
 Array(500).fill().forEach(addStar)
 
-const spaceTexture = new Three.TextureLoader().load('wave.jpg');
+const spaceTexture = new Three.TextureLoader().load('bg4.png');
 scene.background = spaceTexture;
 
 

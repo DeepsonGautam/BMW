@@ -6,6 +6,13 @@ let car;
 
 const scene = new Three.Scene();
 
+const light1 = new Three.PointLight(0xffffff, 2);
+light1.position.set(5, 5, 5);
+scene.add(light1);
+
+const light2 = new Three.AmbientLight(0xffffff, 1);
+scene.add(light2);
+
 const camera = new Three.PerspectiveCamera(
   75,
   window.innerWidth / window.innerHeight,
@@ -95,6 +102,7 @@ loader.load('/car.glb', function (gltf) {
   scene.add(car);
 });
 
+
 const logoTexture = new Three.TextureLoader().load('logo.jpg');
 const normalTexture = new Three.TextureLoader().load('tire-texture.jpg');
 
@@ -105,6 +113,8 @@ const logo = new Three.Mesh(
     normalMap: normalTexture
   })
 );
+
+logo.material.roughness = 0.1;
 
 logo.position.z = 30
 logo.rotation.y = 5.5

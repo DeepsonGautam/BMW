@@ -89,15 +89,16 @@ scene.add(jeff);
 
 const loader = new GLTFLoader();
 
-loader.load('/car.glb', function (gltf) {
+loader.load('/bmw_z8.glb', function (gltf) {
 
   car = gltf.scene;
 
-  car.scale.set(1, 1, 1);
-  car.position.set(0, 0, 0);
+  car.scale.set(420, 420, 420);
+  car.position.set(0, 1.8, 0);
 
-  car.position.z = 30;
+  car.position.z = 35;
   car.position.setX(0);
+  car.rotation.y = 0;
 
   scene.add(car);
 });
@@ -113,6 +114,7 @@ const logo = new Three.Mesh(
     normalMap: normalTexture
   })
 );
+
 
 logo.material.roughness = 0.1;
 
